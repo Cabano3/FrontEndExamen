@@ -1,0 +1,32 @@
+<div>
+    <div class="text-center">
+        <fa-icon class="fa-2x"></fa-icon>
+    </div>
+    <hr>
+    <h5>Lista de Usuarios</h5>  
+    <table class="table table-hover">
+        <thead class="bg-info">
+            <tr>
+                <th>N°</th>
+                <th>Nombre</th>
+                <th>Instructor</th>
+                <th>Lugar de Repasos</th>
+                <th><button [routerLink]="['/club/form']" class="btn btn-sm btn-warning"><fa-icon [icon]="faPencilAlt"></fa-icon></button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let c of clubes; let i = index">
+                <td>{{i | masmas}}</td>
+                <td>{{c.nombre}}</td>
+                <td>{{c.instructor}}</td>
+                <td>{{c.lugar}}</td>
+                <td class="btn-group">
+                    <button [routerLink]="['/clubes', c.idClub]" class="btn btn-sm btn-info"><fa-icon [icon]="faEye"></fa-icon></button>
+                    <button [routerLink]="['/club/form', c.idClub]" class="btn btn-sm btn-warning"><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                    <button (click)="delete(c)" class="btn btn-sm btn-danger"><fa-icon [icon]="faTrash"></fa-icon></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
