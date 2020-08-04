@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faIdCard, faTimes, faUser, faCalendar, faMapMarkedAlt, faGenderless } from '@fortawesome/free-solid-svg-icons';
+import { faUserFriends, faInfoCircle, faUser, faMapMarkerAlt, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Club } from 'src/app/models/club';
 import { ClubService } from 'src/app/services/club.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,15 +11,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ClubCardComponent implements OnInit {
 
-  faIdCard = faIdCard;
-  faTimes = faTimes;
+  faUserFriends = faUserFriends;
+  faInfoCircle = faInfoCircle;
+  faArrowAltCircleLeft = faArrowAltCircleLeft;
   faUser = faUser;
-  faCalendar = faCalendar;
-  faMapMarkedAlt = faMapMarkedAlt;
-  faGenderless = faGenderless;
+  faMapMarkerAlt = faMapMarkerAlt;
+
 
   club : Club;
-
+  
   constructor(private clubService : ClubService,
     private activatedRoute: ActivatedRoute) { }
 

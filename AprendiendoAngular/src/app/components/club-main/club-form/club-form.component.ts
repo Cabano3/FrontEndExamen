@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faUserPlus, faIdCard, faSave, faTimes, faUser, faCalendar, faMapMarkedAlt, faGenderless } from '@fortawesome/free-solid-svg-icons';
+import { faUserFriends, faSave, faTimes, faInfoCircle, faUser, faMapMarkerAlt, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Club } from 'src/app/models/club';
 import { ClubService } from 'src/app/services/club.service';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-club-form',
@@ -12,22 +12,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ClubFormComponent implements OnInit {
 
-  faUserPlus =faUserPlus;
-  faIdCard = faIdCard;
-  faSave = faSave;
+  faUserFriends = faUserFriends;
   faTimes = faTimes;
+  faSave = faSave;
+  faInfoCircle = faInfoCircle;
   faUser = faUser;
-  faCalendar = faCalendar;
-  faMapMarkedAlt = faMapMarkedAlt;
-  faGenderless = faGenderless;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faArrowAltCircleLeft = faArrowAltCircleLeft;
 
   form: FormGroup;  
   submitted: boolean = false;
 
   club : Club;
-  title: string = "Nuevo Club";
 
-  constructor(private clubService : ClubService, private formBuilder: FormBuilder,
+  constructor(private clubService : ClubService, private router: Router,private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -67,8 +65,8 @@ export class ClubFormComponent implements OnInit {
     this.clubService.save(this.club).subscribe(
       result => {
         this.submitted = false;
-        this.club = new Club();
         console.log(result);
+        this.router.navigate(['/clubes']);
       }
     );
   }

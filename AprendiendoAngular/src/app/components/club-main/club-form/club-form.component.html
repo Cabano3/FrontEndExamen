@@ -1,21 +1,17 @@
 <div class="container">
     <div class="text-center">
-        <fa-icon class="fa-2x" [icon]="faUserPlus"></fa-icon>    
+        <fa-icon class="fa-2x" [icon]="faUserFriends"></fa-icon>    
     </div>
     <hr>
-    <h6>{{title}}</h6>
 </div>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="card-body"> 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]='faIdCard'></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]='faUserFriends'></fa-icon></span>
             </div>
             <input formControlName="nombre" type="text" class="form-control form-control-user" [(ngModel)]="club.nombre" 
-            [ngClass]="{'is-invalid': submitted && f.nombres.errors}" placeholder="Nombre del Club..."/>
-            <div *ngIf="submitted && f.nombres.errors" class="invalid-feedback">
-                <div *ngIf="f.nombre?.errors?.required">El nombre del club es requerido</div>
-            </div>
+            placeholder="Nombre del Club..."/>
         </div>          
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -27,21 +23,21 @@
         </div>        
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]='faUser'></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]='faMapMarkerAlt'></fa-icon></span>
             </div>
             <input formControlName="lugar" type="text" class="form-control form-control-user" 
                 [(ngModel)]="club.lugar" placeholder="Lugar de práctica..." required />
         </div>                
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]='faCalendar'></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]='faInfoCircle'></fa-icon></span>
             </div>
             <input formControlName="informacion" type="text" class="form-control form-control-user" 
                 [(ngModel)]="club.informacion" placeholder="Información adicional del club..." required />
         </div>        
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]='faMapMarkedAlt'></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]='faUserFriends'></fa-icon></span>
             </div>
             <input formControlName="minimo_integrantes" type="number" min="1" max="50" class="form-control form-control-user" 
                 [(ngModel)]="club.minimo_integrantes" placeholder="Número mínimo de integrantes..."/>
@@ -54,6 +50,7 @@
             <button type="reset" (click)="onReset()" class="btn btn-danger">
                 <fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar
             </button>
+            <button [routerLink]="['/clubes']" class="btn btn-sm btn-info"><fa-icon class="fa-2x" [icon]="faArrowAltCircleLeft"></fa-icon></button>
         </div>
     </div>        
 </form>

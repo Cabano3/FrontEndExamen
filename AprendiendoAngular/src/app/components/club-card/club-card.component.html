@@ -1,16 +1,18 @@
 <br>
 <br>
+<br>
+<br>
 <div class="container">
     <div class="d-flex justify-content-around">
         <div class="media">
             <div class="media-left">
-                <fa-icon class="mr-3 fa-2x" [icon]='faIdCard'></fa-icon>
+                <fa-icon class="mr-3 fa-2x" [icon]='faUserFriends'></fa-icon>
             </div>
             <div class="media-body">
                 <small class="media-heading">Nombre</small>
                 <p class="h6"><strong>{{club.nombre}}</strong></p>
             </div>
-        </div>
+        </div>&nbsp;|&nbsp;
         <div class="media">
             <div class="media-left">
                 <fa-icon class="mr-3 fa-2x" [icon]='faUser'></fa-icon>
@@ -19,28 +21,28 @@
                 <small class="media-heading">Instructor</small>
                 <p class="h6"><strong>{{club.instructor}}</strong></p>
             </div>
-        </div>
+        </div>&nbsp;|&nbsp;
         <div class="media">
             <div class="media-left">
-                <fa-icon class="mr-3 fa-2x" [icon]='faUser'></fa-icon>
+                <fa-icon class="mr-3 fa-2x" [icon]='faInfoCircle'></fa-icon>
             </div>
             <div class="media-body">
                 <small class="media-heading">Información</small>
                 <p class="h6"><strong>{{club.informacion}}</strong></p>
             </div>
-        </div>
+        </div>&nbsp;|&nbsp;
         <div class="media">
             <div class="media-left">
-                <fa-icon class="mr-3 fa-2x" [icon]='faUser'></fa-icon>
+                <fa-icon class="mr-3 fa-2x" [icon]='faMapMarkerAlt'></fa-icon>
             </div>
             <div class="media-body">
                 <small class="media-heading">Lugar</small>
                 <p class="h6"><strong>{{club.lugar}}</strong></p>
             </div>
-        </div>
+        </div>&nbsp;|&nbsp;
         <div class="media">
             <div class="media-left">
-                <fa-icon class="mr-3 fa-2x" [icon]='faUser'></fa-icon>
+                <fa-icon class="mr-3 fa-2x" [icon]='faUserFriends'></fa-icon>
             </div>
             <div class="media-body">
                 <small class="media-heading">Número Mínimo de Integrantes</small>
@@ -48,5 +50,6 @@
             </div>
         </div>
     </div>
+    <button [routerLink]="['/clubes']" class="btn btn-sm btn-info"><fa-icon class="fa-2x" [icon]="faArrowAltCircleLeft"></fa-icon></button>
 </div>
 

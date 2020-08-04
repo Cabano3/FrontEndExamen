@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faEye, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faPencilAlt, faTrash, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 import swal from 'sweetalert2';
 import { Club } from 'src/app/models/club';
 import { ClubService } from 'src/app/services/club.service';
@@ -11,6 +11,7 @@ import { ClubService } from 'src/app/services/club.service';
 })
 export class ClubListComponent implements OnInit {
 
+  faPlusSquare = faPlusSquare;
   faEye = faEye;
   faPencilAlt = faPencilAlt;
   faTrash = faTrash;
